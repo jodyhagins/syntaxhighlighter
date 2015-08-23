@@ -76,7 +76,7 @@
       { regex: SyntaxHighlighter.regexLib.doubleQuotedString,  css: 'string' },
       { regex: SyntaxHighlighter.regexLib.singleQuotedString,  css: 'string' },
       { regex: /^ *#.*/gm,                                     css: 'preprocessor' },
-      { regex: new RegExp('@\\w+\\b', 'g'),                    css: 'color2 bold' }, // ObjC keyword
+      { regex: new RegExp('@\\w+\\b', 'g'),                    css: 'keyword bold' }, // ObjC keyword
       { regex: /@/g,                                           css: 'string' },      // Most likely NSString
       { regex: new RegExp('\.?\\b\\d+[a-z]?\\b', 'g'),         css: 'constants' },   // Number
       { regex: new RegExp('\\b(NS|UI|CG)\\w+\\b', 'g'),        css: 'color3' },      // Cocoa Prefixes
