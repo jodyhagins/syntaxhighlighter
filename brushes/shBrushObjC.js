@@ -44,8 +44,8 @@
                     'tm uint16_t uint32_t uint64_t uint8_t uintptr_t unsigned ' +
                     'va_list void wchar_t wctrans_t wctype_t wint_t ';
 
-    var keywords =  'IBAction IBOutlet NO NULL SEL YES __declspec __exception ' +
-                    '__finally __try __weak alignas alignof assign atomic auto ' +
+    var keywords =  'Class IBAction IBOutlet NO NULL SEL YES __bridge __declspec __exception ' +
+                    '__finally __try __weak _cmd alignas alignof assign atomic auto ' +
                     'break case catch class const const_cast constexpr continue ' +
                     'decltype default delete deprecated dllexport dllimport do ' +
                     'dynamic_cast else enum explicit extern false for friend ' +
@@ -80,6 +80,9 @@
                     'ungetc va_arg va_end va_start vfprintf vprintf ' +
                     'vsprintf wcstombs wctomb ';
 
+    var pfx       = 'NS|UI|CG|object_';
+    var pfx_ic    = 'objc_|dispatch_';
+
     this.regexList = [
       { regex: SyntaxHighlighter.regexLib.singleLineCComments, css: 'comments' },
       { regex: SyntaxHighlighter.regexLib.multiLineCComments,  css: 'comments' },
@@ -89,7 +92,8 @@
       { regex: new RegExp('@\\w+\\b', 'g'),                    css: 'objc_keyword bold' },
       { regex: /@/g,                                           css: 'string' },
       { regex: new RegExp('\.?\\b\\d+[a-z]?\\b', 'g'),         css: 'numbers' },
-      { regex: new RegExp('\\b(NS|UI|CG|objc_)\\w+\\b', 'g'),  css: 'cocoa_pfx bold' },
+      { regex: new RegExp('\\b('+pfx+')\\w+\\b', 'g'),         css: 'cocoa_pfx bold' },
+      { regex: new RegExp('\\b('+pfx_ic+')\\w+\\b', 'gi'),     css: 'cocoa_pfx bold' },
       { regex: new RegExp('\\b_?WJH\\w+\\b', 'gi'),            css: 'wjh_pfx bold' },
 
       { regex: new RegExp(this.getKeywords(datatypes), 'gm'),  css: 'datatypes bold' },
