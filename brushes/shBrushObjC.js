@@ -39,7 +39,8 @@
                     '_purecall_handler sig_atomic_t signed size_t _stat __stat64 _stati64 terminate_function ' +
                     'time_t __time64_t _timeb __timeb64 tm uintptr_t unsigned _utimbuf ' +
                     'uint8_t uint16_t uint32_t uint64_t ' +
-                    'va_list wchar_t wctrans_t wctype_t wint_t';
+                    'va_list wchar_t wctrans_t wctype_t wint_t ' +
+                    'id instancetype ';
 
     var keywords =  'alignas alignof auto break case catch class const constexpr decltype __finally __exception __try ' +
                     'const_cast continue private public protected __declspec ' +
