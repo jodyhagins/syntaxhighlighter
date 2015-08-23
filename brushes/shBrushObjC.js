@@ -44,7 +44,8 @@
                     'tm uint16_t uint32_t uint64_t uint8_t uintptr_t unsigned ' +
                     'va_list void wchar_t wctrans_t wctype_t wint_t ';
 
-    var keywords =  'Class IBAction IBOutlet NO NULL SEL YES __bridge __declspec __exception ' +
+    var keywords =  'Class IBAction IBOutlet NO NULL SEL YES ' +
+                    '__attribute__ __bridge __declspec __exception ' +
                     '__finally __try __weak _cmd alignas alignof assign atomic auto ' +
                     'break case catch class const const_cast constexpr continue ' +
                     'decltype default delete deprecated dllexport dllimport do ' +
