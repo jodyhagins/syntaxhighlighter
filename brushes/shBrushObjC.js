@@ -89,7 +89,7 @@
       { regex: new RegExp('@\\w+\\b', 'g'),                    css: 'objc_keyword bold' },
       { regex: /@/g,                                           css: 'string' },
       { regex: new RegExp('\.?\\b\\d+[a-z]?\\b', 'g'),         css: 'numbers' },
-      { regex: new RegExp('\\b(NS|UI|CG)\\w+\\b', 'g'),        css: 'cocoa_pfx' },
+      { regex: new RegExp('\\b(NS|UI|CG|objc_)\\w+\\b', 'g'),        css: 'cocoa_pfx' },
       { regex: new RegExp('\\b_?WJH\\w+\\b', 'gi'),            css: 'wjh_pfx bold' },
 
       { regex: new RegExp(this.getKeywords(datatypes), 'gm'),  css: 'datatypes bold' },
