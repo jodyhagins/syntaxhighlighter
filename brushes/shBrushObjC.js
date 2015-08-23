@@ -76,13 +76,13 @@
       { regex: SyntaxHighlighter.regexLib.doubleQuotedString,  css: 'string' },
       { regex: SyntaxHighlighter.regexLib.singleQuotedString,  css: 'string' },
       { regex: /^ *#.*/gm,                                     css: 'preprocessor' },
-      { regex: new RegExp('@\\w+\\b', 'g'),                    css: 'keyword bold' }, // ObjC keyword
-      { regex: /@/g,                                           css: 'string' },      // Most likely NSString
-      { regex: new RegExp('\.?\\b\\d+[a-z]?\\b', 'g'),         css: 'constants' },   // Number
-      { regex: new RegExp('\\b(NS|UI|CG)\\w+\\b', 'g'),        css: 'color3' },      // Cocoa Prefixes
-      { regex: new RegExp('\\b_?WJH\\w+\\b', 'gi'),            css: 'value' },       // My Prefixes
+      { regex: new RegExp('@\\w+\\b', 'g'),                    css: 'objc_keyword bold' },
+      { regex: /@/g,                                           css: 'string' },
+      { regex: new RegExp('\.?\\b\\d+[a-z]?\\b', 'g'),         css: 'numbers' },
+      { regex: new RegExp('\\b(NS|UI|CG)\\w+\\b', 'g'),        css: 'cocoa_pfx' },
+      { regex: new RegExp('\\b_?WJH\\w+\\b', 'gi'),            css: 'wjh_pfx' },
 
-      { regex: new RegExp(this.getKeywords(datatypes), 'gm'),  css: 'color1 bold' },
+      { regex: new RegExp(this.getKeywords(datatypes), 'gm'),  css: 'datatypes bold' },
       { regex: new RegExp(this.getKeywords(functions), 'gm'),  css: 'functions bold' },
       { regex: new RegExp(this.getKeywords(keywords), 'gm'),   css: 'keyword bold' }
     ];
