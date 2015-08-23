@@ -40,7 +40,7 @@
                     'time_t __time64_t _timeb __timeb64 tm uintptr_t unsigned _utimbuf ' +
                     'uint8_t uint16_t uint32_t uint64_t ' +
                     'va_list wchar_t wctrans_t wctype_t wint_t ' +
-                    'id instancetype ';
+                    'id instancetype void ';
 
     var keywords =  'alignas alignof auto break case catch class const constexpr decltype __finally __exception __try ' +
                     'const_cast continue private public protected __declspec ' +
@@ -50,9 +50,10 @@
                     'register reinterpret_cast return selectany ' +
                     'sizeof static static_cast static_assert struct switch template this ' +
                     'thread thread_local throw true false try typedef typeid typename union ' +
-                    'using uuid virtual void volatile whcar_t while ' +
+                    'using uuid virtual volatile whcar_t while ' +
                     'IBAction IBOutlet SEL YES NO atomic nonatomic readwrite readonly ' +
-                    'retain assign strong weak getter setter nil NULL super self ';
+                    'retain assign strong weak getter setter nil NULL super self ' +
+                    '__weak ';
 
     var functions =  'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' +
                      'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' +

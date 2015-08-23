@@ -64,7 +64,8 @@
   color: #C41A16 !important;
 }
 .syntaxhighlighter .keyword {
-  color: #AA0D91 !important;
+  /* color: #AA0D91 !important; */
+  color: blue !important;
 }
 .syntaxhighlighter .objc_keyword {
   color: #0C747A !important;
