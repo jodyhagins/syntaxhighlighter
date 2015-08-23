@@ -14,63 +14,71 @@
   {
     // Copyright 2006 Shin, YoungJin
     // Copyright 2015 Jody Hagins
-    var datatypes = 'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
-                    'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' +
-                    'HCOLORSPACE HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP ' +
-                    'HENHMETAFILE HFILE HFONT HGDIOBJ HGLOBAL HHOOK HICON HINSTANCE HKEY ' +
-                    'HKL HLOCAL HMENU HMETAFILE HMODULE HMONITOR HPALETTE HPEN HRESULT ' +
-                    'HRGN HRSRC HSZ HWINSTA HWND INT INT_PTR INT32 INT64 LANGID LCID LCTYPE ' +
-                    'LGRPID LONG LONGLONG LONG_PTR LONG32 LONG64 LPARAM LPBOOL LPBYTE LPCOLORREF ' +
-                    'LPCSTR LPCTSTR LPCVOID LPCWSTR LPDWORD LPHANDLE LPINT LPLONG LPSTR LPTSTR ' +
-                    'LPVOID LPWORD LPWSTR LRESULT PBOOL PBOOLEAN PBYTE PCHAR PCSTR PCTSTR PCWSTR ' +
-                    'PDWORDLONG PDWORD_PTR PDWORD32 PDWORD64 PFLOAT PHALF_PTR PHANDLE PHKEY PINT ' +
-                    'PINT_PTR PINT32 PINT64 PLCID PLONG PLONGLONG PLONG_PTR PLONG32 PLONG64 POINTER_32 ' +
-                    'POINTER_64 PSHORT PSIZE_T PSSIZE_T PSTR PTBYTE PTCHAR PTSTR PUCHAR PUHALF_PTR ' +
-                    'PUINT PUINT_PTR PUINT32 PUINT64 PULONG PULONGLONG PULONG_PTR PULONG32 PULONG64 ' +
-                    'PUSHORT PVOID PWCHAR PWORD PWSTR SC_HANDLE SC_LOCK SERVICE_STATUS_HANDLE SHORT ' +
-                    'SIZE_T SSIZE_T TBYTE TCHAR UCHAR UHALF_PTR UINT UINT_PTR UINT32 UINT64 ULONG ' +
-                    'ULONGLONG ULONG_PTR ULONG32 ULONG64 USHORT USN VOID WCHAR WORD WPARAM WPARAM WPARAM ' +
-                    'char char16_t char32_t bool short int __int32 __int64 __int8 __int16 long float ' +
-                    'double __wchar_t clock_t _complex _dev_t _diskfree_t div_t ldiv_t _exception ' +
-                    '_EXCEPTION_POINTERS FILE _finddata_t _finddatai64_t _wfinddata_t _wfinddatai64_t ' +
-                    '__finddata64_t __wfinddata64_t _FPIEEE_RECORD fpos_t _HEAPINFO _HFILE lconv ' +
-                    'int8_t int16_t int32_t int64_t ' +
-                    'intptr_t jmp_buf mbstate_t _off_t _onexit_t _PNH ptrdiff_t ' +
-                    '_purecall_handler sig_atomic_t signed size_t _stat __stat64 _stati64 terminate_function ' +
-                    'time_t __time64_t _timeb __timeb64 tm uintptr_t unsigned _utimbuf ' +
-                    'uint8_t uint16_t uint32_t uint64_t ' +
-                    'va_list wchar_t wctrans_t wctype_t wint_t ' +
-                    'id instancetype void ';
+    var datatypes = 'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORD32 DWORD64 DWORDLONG ' +
+                    'DWORD_PTR FILE FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH HCOLORSPACE ' +
+                    'HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP HENHMETAFILE ' +
+                    'HFILE HFONT HGDIOBJ HGLOBAL HHOOK HICON HINSTANCE HKEY HKL HLOCAL ' +
+                    'HMENU HMETAFILE HMODULE HMONITOR HPALETTE HPEN HRESULT HRGN HRSRC ' +
+                    'HSZ HWINSTA HWND INT INT32 INT64 INT_PTR LANGID LCID LCTYPE LGRPID ' +
+                    'LONG LONG32 LONG64 LONGLONG LONG_PTR LPARAM LPBOOL LPBYTE LPCOLORREF ' +
+                    'LPCSTR LPCTSTR LPCVOID LPCWSTR LPDWORD LPHANDLE LPINT LPLONG LPSTR ' +
+                    'LPTSTR LPVOID LPWORD LPWSTR LRESULT PBOOL PBOOLEAN PBYTE PCHAR PCSTR ' +
+                    'PCTSTR PCWSTR PDWORD32 PDWORD64 PDWORDLONG PDWORD_PTR PFLOAT ' +
+                    'PHALF_PTR PHANDLE PHKEY PINT PINT32 PINT64 PINT_PTR PLCID PLONG ' +
+                    'PLONG32 PLONG64 PLONGLONG PLONG_PTR POINTER_32 POINTER_64 PSHORT ' +
+                    'PSIZE_T PSSIZE_T PSTR PTBYTE PTCHAR PTSTR PUCHAR PUHALF_PTR PUINT ' +
+                    'PUINT32 PUINT64 PUINT_PTR PULONG PULONG32 PULONG64 PULONGLONG ' +
+                    'PULONG_PTR PUSHORT PVOID PWCHAR PWORD PWSTR SC_HANDLE SC_LOCK ' +
+                    'SERVICE_STATUS_HANDLE SHORT SIZE_T SSIZE_T TBYTE TCHAR UCHAR ' +
+                    'UHALF_PTR UINT UINT32 UINT64 UINT_PTR ULONG ULONG32 ULONG64 ' +
+                    'ULONGLONG ULONG_PTR USHORT USN VOID WCHAR WORD WPARAM WPARAM ' +
+                    'WPARAM _EXCEPTION_POINTERS _FPIEEE_RECORD _HEAPINFO _HFILE _PNH ' +
+                    '__finddata64_t __int16 __int32 __int64 __int8 __stat64 __time64_t ' +
+                    '__timeb64 __wchar_t __wfinddata64_t _complex _dev_t _diskfree_t ' +
+                    '_exception _finddata_t _finddatai64_t _off_t _onexit_t ' +
+                    '_purecall_handler _stat _stati64 _timeb _utimbuf _wfinddata_t ' +
+                    '_wfinddatai64_t bool char char16_t char32_t clock_t div_t ' +
+                    'double float fpos_t id instancetype int int16_t int32_t int64_t ' +
+                    'int8_t intptr_t jmp_buf lconv ldiv_t long mbstate_t ptrdiff_t ' +
+                    'short sig_atomic_t signed size_t terminate_function time_t ' +
+                    'tm uint16_t uint32_t uint64_t uint8_t uintptr_t unsigned ' +
+                    'va_list void wchar_t wctrans_t wctype_t wint_t ';
 
-    var keywords =  'alignas alignof auto break case catch class const constexpr decltype __finally __exception __try ' +
-                    'const_cast continue private public protected __declspec ' +
-                    'default delete deprecated dllexport dllimport do dynamic_cast '
-                    'else enum explicit extern if for friend goto inline ' +
-                    'mutable naked namespace new noinline noreturn nothrow noexcept nullptr ' +
-                    'register reinterpret_cast return selectany ' +
-                    'sizeof static static_cast static_assert struct switch template this ' +
-                    'thread thread_local throw true false try typedef typeid typename union ' +
-                    'using uuid virtual volatile whcar_t while ' +
-                    'IBAction IBOutlet SEL YES NO atomic nonatomic readwrite readonly ' +
-                    'retain assign strong weak getter setter nil NULL super self ' +
-                    '__weak ';
+    var keywords =  'IBAction IBOutlet NO NULL SEL YES __declspec __exception ' +
+                    '__finally __try __weak alignas alignof assign atomic auto ' +
+                    'break case catch class const const_cast constexpr continue ' +
+                    'decltype default delete deprecated dllexport dllimport do ' +
+                    'dynamic_cast else enum explicit extern false for friend ' +
+                    'getter goto if inline mutable naked namespace new nil ' +
+                    'noexcept noinline nonatomic noreturn nothrow nullptr ' +
+                    'private protected public readonly readwrite register ' +
+                    'reinterpret_cast retain return selectany self setter ' +
+                    'sizeof static static_assert static_cast strong struct ' +
+                    'super switch template this thread thread_local throw ' +
+                    'true try typedef typeid typename union using uuid ' +
+                    'virtual volatile weak whcar_t while ';
 
-    var functions =  'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' +
-                     'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' +
-                     'setlocale acos asin atan atan2 ceil cos cosh exp fabs floor fmod ' +
-                     'frexp ldexp log log10 modf pow sin sinh sqrt tan tanh jmp_buf ' +
-                     'longjmp setjmp raise signal sig_atomic_t va_arg va_end va_start ' +
-                     'clearerr fclose feof ferror fflush fgetc fgetpos fgets fopen ' +
-                     'fprintf fputc fputs fread freopen fscanf fseek fsetpos ftell ' +
-                     'fwrite getc getchar gets perror printf putc putchar puts remove ' +
-                     'rename rewind scanf setbuf setvbuf sprintf sscanf tmpfile tmpnam ' +
-                     'ungetc vfprintf vprintf vsprintf abort abs atexit atof atoi atol ' +
-                     'bsearch calloc div exit free getenv labs ldiv malloc mblen mbstowcs ' +
-                     'mbtowc qsort rand realloc srand strtod strtol strtoul system ' +
-                     'wcstombs wctomb memchr memcmp memcpy memmove memset strcat strchr ' +
-                     'strcmp strcoll strcpy strcspn strerror strlen strncat strncmp ' +
-                     'strncpy strpbrk strrchr strspn strstr strtok strxfrm asctime ' +
-                     'clock ctime difftime gmtime localtime mktime strftime time';
+    var functions = 'abort abs acos asctime asin assert atan atan2 atexit ' +
+                    'atof atoi atol bsearch calloc ceil clearerr clock cos ' +
+                    'cosh ctime difftime div errno exit exp fabs fclose ' +
+                    'feof ferror fflush fgetc fgetpos fgets floor fmod ' +
+                    'fopen fprintf fputc fputs fread free freopen frexp ' +
+                    'fscanf fseek fsetpos ftell fwrite getc getchar getenv ' +
+                    'gets gmtime isalnum isalpha iscntrl isdigit isgraph ' +
+                    'islower isprint ispunct isspace isupper isxdigit ' +
+                    'jmp_buf labs ldexp ldiv localeconv localtime log ' +
+                    'log10 longjmp malloc mblen mbstowcs mbtowc memchr ' +
+                    'memcmp memcpy memmove memset mktime modf perror ' +
+                    'pow printf putc putchar puts qsort raise rand ' +
+                    'realloc remove rename rewind scanf setbuf setjmp ' +
+                    'setlocale setvbuf sig_atomic_t signal sin sinh ' +
+                    'sprintf sqrt srand sscanf strcat strchr strcmp ' +
+                    'strcoll strcpy strcspn strerror strftime strlen ' +
+                    'strncat strncmp strncpy strpbrk strrchr strspn ' +
+                    'strstr strtod strtok strtol strtoul strxfrm system ' +
+                    'tan tanh time tmpfile tmpnam tolower toupper ' +
+                    'ungetc va_arg va_end va_start vfprintf vprintf ' +
+                    'vsprintf wcstombs wctomb ';
 
     this.regexList = [
       { regex: SyntaxHighlighter.regexLib.singleLineCComments, css: 'comments' },
